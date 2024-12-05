@@ -55,10 +55,3 @@
   - 워커 태스크 내 계산 수행  
 
 ---
-
-## 사용 방법
-
-1. 이 저장소를 클론합니다:
-   ```bash
-   git clone https://github.com/username/repo.git
-   cd repo
