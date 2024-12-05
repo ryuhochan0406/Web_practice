@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>계산해봅시다</title>
+    <script>
+      function showResult(expression, spanElement) {
+        spanElement.innerHTML = eval(expression);
+      }
+    </script>
+  </head>
+  <body>
+    <h1>계산해봅시다</h1>
+    <p>2 + 4 = <span onclick="showResult('2+4', this)">답</span></p>
+    <p>4 * 20 + 64 = <span onclick="showResult('4*20+64', this)">답</span></p>
+    <p>20/5 - 8 * 2 = <span onclick="showResult('20/5-8*2', this)">답</span></p>
+
+    <hr />
+
+    <p>2 + 4 = <span onclick="this.innerHTML=eval(2+4);">답</span></p>
+    <p>4 * 20 + 64 = <span onclick="this.innerHTML=eval(4*20+64);">답</span></p>
+    <p>
+      20/5 - 8 * 2 =
+      <span onclick="this.innerHTML=eval((20/5)-(8*2));">답</span>
+    </p>
+  </body>
+</html>
