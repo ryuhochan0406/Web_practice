@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <script>
+      for (var i = 1; i <= 6; i++) {
+        for (var j = 0; j < i; j++) {
+          document.write("*");
+        }
+        document.write("<br>");
+      }
+    </script>
+    <script>
+      document.write("<h1>document.write()로 표만들기</h1>");
+      document.write("<hr>");
+      document.write('<table style="border: 1px solid black">');
+      document.write("<tr>");
+      document.write('<th style="border: 1px solid black">n</th>');
+      for (var i = 0; i <= 9; i++) {
+        document.write('<td style="border: 1px solid black">' + i + "</td>");
+      }
+      document.write("</tr>");
+      document.write("<tr>");
+      document.write('<th style="border: 1px solid black">n^2</th>');
+      for (var i = 0; i <= 9; i++) {
+        document.write(
+          '<td style="border: 1px solid black">' + i * i + "</td>"
+        );
+      }
+      document.write("</tr>");
+      document.write("</table>");
+    </script>
+  </body>
+</html>
