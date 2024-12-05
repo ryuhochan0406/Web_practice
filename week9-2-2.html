@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>일기 보기</title>
+    <style>
+        .diary-entry {
+            border-bottom: 1px solid #ccc;
+            margin: 20px 0;
+            padding: 10px;
+        }
+        .date {
+            font-weight: bold;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>일기 보기</h1>
+    <hr>
+    <div id="diary-list"></div>
+
+    <script>
+        let date = new Date();
+        let key = date.getFullYear()+ "." + (date.getMonth() + 1) + "." + date.getDate();
+        
+        // sessionStorage에서 일기 내용을 가져와서 표시
+        let savedDiary = sessionStorage.getItem(key);
+        let diaryList = document.getElementById("diary-list");
+        
+        if(savedDiary) {
+            let entry = document.createElement("div");
+            entry.className = "diary-entry";
+            
+            let dateSpan = document.createElement("span");
+            dateSpan.className = "date";
+            dateSpan.textContent = key;
+            
+            let content = document.createElement("span");
+            content.innerHTML = savedDiary.replace(/\n/g, '<br>');
+            
+            entry.appendChild(dateSpan);
+            entry.appendChild(content);
+            diaryList.appendChild(entry);
+        } else {
+            diaryList.innerHTML = "작성된 일기가 없습니다.";
+        }
+    </script>
+</body>
+</html>
